@@ -12,7 +12,7 @@ const feedbackRouter = express.Router();
 
 feedbackRouter.route('/')
 .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
-.get(cors.corsWithOptions, (req, res, next)=>{
+.get(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next)=>{
 	Feedback.find(req.query)
 	.then((feedback)=>{
 		res.statusCode = 200;

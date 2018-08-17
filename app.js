@@ -12,6 +12,8 @@ var leadersRouter = require('./routes/leadersRouter');
 var uploadRouter = require('./routes/uploadRouter');
 var favoriteRouter = require('./routes/favoriteRouter');
 var feedbackRouter = require('./routes/feedbackRouter');
+var stiriRouter = require('./routes/stiriRouter');
+
 
 var session = require('express-session');
 var FileStore = require('session-file-store')(session);
@@ -70,6 +72,7 @@ app.use('/leaders', leadersRouter);
 app.use('/imageUpload', uploadRouter);
 app.use('/favorites', favoriteRouter);
 app.use('/feedback', feedbackRouter);
+app.use('/stiri', stiriRouter);
 
 
 
